@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import ies.murallaromana.dam.segundo.proyectorecyclesview.R
 import ies.murallaromana.dam.segundo.proyectorecyclesview.modelo.entidades.Personaje
 
@@ -32,15 +33,17 @@ class ListaPersonajesAdapter(val list_personajes: List<Personaje>) :
     }
 
     override fun onBindViewHolder(holder: PersonajesViewHolder, position: Int) {
-        val personaje =  list_personajes.get(position)
+        val personaje = list_personajes.get(position)
 
-         holder.tvId.setText(personaje.id.toString())
-         holder.tvNombre.setText(personaje.nombre)
-         holder.tvApellidos.setText(personaje.apellido)
-         holder.tvTitulo.setText(personaje.titulo)
-         holder.tvFamilia.setText(personaje.famila)
-         holder.tvURL.setText(personaje.url)
-         holder.tvDescricion.setText(personaje.descripcion)
+        holder.tvId.setText(personaje.id.toString())
+        holder.tvNombre.setText(personaje.nombre)
+        holder.tvApellidos.setText(personaje.apellido)
+        holder.tvTitulo.setText(personaje.titulo)
+        holder.tvFamilia.setText(personaje.famila)
+        holder.tvURL.setText(personaje.url)
+        holder.tvDescricion.setText(personaje.descripcion)
+        Picasso.get().load("https://thronesapi.com/assets/images/daenerys.jpg"
+        ).into(holder.ivImagen)
     }
 
     override fun getItemCount(): Int = list_personajes.size

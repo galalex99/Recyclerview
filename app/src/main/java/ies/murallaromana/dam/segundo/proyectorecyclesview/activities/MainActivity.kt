@@ -26,5 +26,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = ListaPersonajesAdapter(Personajes.getAll())
         binding.rvListaPersonajes.adapter = adapter
         binding.rvListaPersonajes.layoutManager = layoutManager
+        binding.rvListaPersonajes.setHasFixedSize(true)
     }
+
 }
