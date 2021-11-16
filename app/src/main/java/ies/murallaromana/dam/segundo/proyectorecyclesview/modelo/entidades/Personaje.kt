@@ -1,5 +1,7 @@
 package ies.murallaromana.dam.segundo.proyectorecyclesview.modelo.entidades
 
+import java.io.Serializable
+
 class Personaje(
     var id: Long,
     var nombre: String,
@@ -8,7 +10,7 @@ class Personaje(
     var famila: String,
     var url: String,
     var descripcion: String = ""
-) {
+) :Serializable {
 
     fun devolveNombre(): String {
         return "Nombre : " + {this.nombre } + " \nApellidos: " + {this.apellido }
